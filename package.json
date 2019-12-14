@@ -1,7 +1,7 @@
 {
   "name": "notes-app-api",
   "version": "1.1.0",
-  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "description": "Serverless Backend API for a note-taking application",
   "main": "handler.js",
   "scripts": {
     "test": "serverless-bundle test"
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+    "url": "https://github.com/Chrysalis-B/serverless-stack-api"
   },
   "devDependencies": {
     "aws-sdk": "^2.590.0",
