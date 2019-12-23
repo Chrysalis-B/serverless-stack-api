@@ -1,6 +1,5 @@
 service: notes-app-2-api
 
-# Create an optimized package for our functions 
 package:
   individually: true
 
@@ -9,13 +8,17 @@ plugins:
   - serverless-offline # for local development
   - serverless-dotenv-plugin # Load .env as environment variables
 
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  tableName: ${self:custom.stage}-notes
+
 provider:
   name: aws
   runtime: nodejs10.x
   stage: dev
   region: us-east-1
   environment:
-    tableName: notes
+    tableName: ${self:custom.tableName}
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
   iamRoleStatements:
     - Effect: Allow
@@ -27,7 +30,8 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:us-east-1:677225015892:table/notes"
+      Resource: 
+        - "Fn::GetAtt": [ NotesTable, Arn ]
 
 functions:
   create:
@@ -81,3 +85,4 @@ functions:
 
 resources:
   - ${file(resources/api-gateway-errors.yml)}
+  - ${file(resources/dynamodb-table.yml)}
