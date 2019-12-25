@@ -3,7 +3,7 @@ Resources:
     Type: AWS::Cognito::UserPool
     Properties:
       UserPoolName: ${self:custom.stage}-notes-user-pool
-      UserNameAttributes:
+      UsernameAttributes:
         - email
       AutoVerifiedAttributes:
         - email
