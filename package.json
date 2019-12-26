@@ -1,6 +1,6 @@
 {
   "name": "notes-app-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Serverless Backend API for a note-taking application",
   "main": "handler.js",
   "scripts": {
