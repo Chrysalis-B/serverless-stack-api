@@ -25,6 +25,4 @@ export async function main(event, context) {
         console.error(e);
         return failure({status: false});
     }
-
-    
 }
