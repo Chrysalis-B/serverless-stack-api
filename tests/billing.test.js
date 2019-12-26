@@ -25,4 +25,4 @@ test('Highest tier', () => {
     const expectedCost = calculateCost(storage);
 
     expect(cost).toEqual(expectedCost);
-})
+});
