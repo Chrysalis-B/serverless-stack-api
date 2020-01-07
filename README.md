@@ -16,9 +16,8 @@ AWS services used:
 - Lambda
 - CloudFormation
 
-3rd Party Services
+Other Services
 - Stripe Billing API
-
 
 
 ---
